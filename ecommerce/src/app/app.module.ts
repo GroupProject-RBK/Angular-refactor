@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { AccountComponent } from './components/pages/account/account.component';
 import { DropdownComponent } from './components/pages/dropdown/dropdown.component';
 import { MainLayoutComponent } from './components/pages/main-layout/main-layout.component';
+import { CartComponent } from './components/pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MainLayoutComponent } from './components/pages/main-layout/main-layout.
     RegisterComponent,
     AccountComponent,
     DropdownComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
