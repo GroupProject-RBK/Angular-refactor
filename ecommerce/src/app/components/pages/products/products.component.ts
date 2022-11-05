@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { CardComponent } from '../../card/card.component';
 
+
+NgModule({
+  imports: [CardComponent],
+})
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
