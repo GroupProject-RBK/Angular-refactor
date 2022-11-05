@@ -33,7 +33,7 @@ import { FormsModule  } from '@angular/forms';
     RegisterComponent,
     AccountComponent,
     DropdownComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +41,7 @@ import { FormsModule  } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+    
 
   ],
   providers: [],

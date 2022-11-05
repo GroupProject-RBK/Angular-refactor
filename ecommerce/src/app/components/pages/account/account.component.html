@@ -1,1 +1,47 @@
-<p>account works!</p>
+<div class="wrapper bg-white mt-sm-5">
+  <h4 class="pb-4 border-bottom">Account settings</h4>
+  <div class="d-flex align-items-start py-3 border-bottom">
+      <img src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          class="img" alt="">
+          
+  </div>
+  
+  <div class="py-2">
+      <div class="row py-2">
+          <div class="col-md-6">
+              <label for="firstname">user name</label>
+              <input [(ngModel)]="userInfo.username" type="text" class="bg-light form-control"   value="{{userInfo.username}}">
+          </div>
+      </div>
+      
+    <div class="row py-2">
+      <div class="col-md-6">
+        <label for="phone">Phone Number</label>
+        <input type="tel" class="bg-light form-control" placeholder="type your new phone number">
+      </div>
+  </div>
+      <div class="row py-2">
+          <div class="col-md-6">
+              <label for="email">Email Address</label>
+              <input [(ngModel)]="userInfo.email" type="text" class="bg-light form-control" value="{{userInfo.email}}">
+          </div>
+      </div>
+      <h6>You need to enter your password to confirm </h6>
+      <div class="col-md-6">
+        <label for="firstname">password</label>
+        <input [(ngModel)]="userInfo.password" type="password" Autocomplete="off" class="bg-light form-control" >
+    </div>
+      <div class="row py-2">
+      </div>
+      <div class="py-3 pb-4 border-bottom">
+          <button class="btn btn-primary mr-3" (click)="updateU()" >Save Changes</button>
+          <button class="btn border button" >Cancel</button>
+      </div>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="message">
+    {{ message }}
+   </div>
+   <div class="alert alert-success" role="alert" *ngIf="messageobj">
+    {{messageobj}}
+  </div>
+</div>
