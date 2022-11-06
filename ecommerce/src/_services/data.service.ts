@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-
+cart:any=[]
   constructor(private http:HttpClient) { 
    
   }
@@ -47,7 +47,7 @@ getallPu(id:number){
 //buys service
 //buy a product
 buyP(id:number,userid:number){
-  return this.http.post('http://localhost:3002/products/buy',{id,userid})
+  return this.http.post('http://localhost:3002/products/buy',{id:id,userid:userid})
 }
 //get all buys by user
 getallBuys(id:string){
@@ -67,8 +67,13 @@ return this.http.post('http://localhost:3002/products/login',user,{withCredentia
 
   //logout user
   logout(){
-    return this.http.get('http://localhost:3002/products/logout')
-  }
+    var allCookies = document.cookie.split(';');
+    for (var i = 0; i < allCookies.length; i++)
+  
+        document.cookie = allCookies[i] + "=;expires="
+        + new Date(0).toUTCString();
+        console.log( document.cookie)
+}
   //update user Info
   updateU(info:any){
     return this.http.put('http://localhost:3002/products/Uuser',info)
@@ -81,4 +86,29 @@ getOne(){
   const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + x })
   return this.http.post('http://localhost:3002/products/get-user',null,{headers})
 }
+addToCart(product:any){
+  console.log(this.cart);
+  this.cart.push(product);
+  
+}
+getcart() {
+  return this.cart;
+}
+clearCart(){
+  this.cart = [];
+  return this.cart;
+}
+deleteItem(index:any){
+  this.cart.splice(index,1);
+}
+totalPrice(){
+  let t:number=0;
+  for(var i=0;i<this.cart.length;i++){
+    console.log(this.cart)
+    t+=this.cart[i][0].price
+  }
+  return t
+}
+
+
 }

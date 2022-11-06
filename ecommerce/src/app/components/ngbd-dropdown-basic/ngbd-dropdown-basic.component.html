@@ -1,5 +1,5 @@
 <div mdbDropdown class="dropdown">
-	<button
+	<!---<button
 	  class="btn btn-primary dropdown-toggle"
 	  type="button"
 	  id="dropdownMenuButton"
@@ -13,5 +13,23 @@
 	  <li><a class="dropdown-item" href="#">Another action</a></li>
 	  <li><a class="dropdown-item" href="#">Something else here</a></li>
 	</ul>
-  </div>
+  </div>---->
+  <div class="row">
+	<div class="col">
+		<div ngbDropdown class="d-inline-block">
+			<button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+				My Account
+			</button>
+			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+				<button ngbDropdownItem>your name</button>
+				<button ngbDropdownItem>goto profile</button>
+				<button ngbDropdownItem>logout</button>
+			</div>
+		</div>
+	</div>
 
+
+</div>
+<style>.dropdown{
+	z-index:10
+} </style>

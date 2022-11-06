@@ -38,10 +38,13 @@ login(userlogin:any){
       this.tokenObj=result;this.token=this.tokenObj.token
      this.tokenservices.gettingToken(this.token)
       console.log(userlogin.value)
-      this.route.navigate(['/home'])
+     
 
     },
     (error)=>{this.messageobj=error.error.msg;this.message=this.messageobj})
+}
+check(){
+  if (document.cookie.length > 0)  {this.route.navigate(["home"]) }
 }
 
 }

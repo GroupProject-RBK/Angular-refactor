@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/_services/data.service';
 import { Router } from '@angular/router';
+;
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -19,7 +20,7 @@ export class ProductsComponent implements OnInit {
     })
   }
   goToSingleProductById(id:any,i:any){
-    this.route.navigate(['products/'+id])
+    this.route.navigate([`products/${id}`])
   }
   ngOnInit(): void {
    this.getAllProduct()

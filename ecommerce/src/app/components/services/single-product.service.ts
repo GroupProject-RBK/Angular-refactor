@@ -66,4 +66,7 @@ return this.http.post('http://localhost:3002/products/login',user,{withCredentia
 getOne(token:any){
   return this.http.post('http://localhost:3002/products/get-user',token)
 }
+
 }
+
+

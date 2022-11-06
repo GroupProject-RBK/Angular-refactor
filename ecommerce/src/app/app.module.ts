@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -25,9 +26,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { NgbCarouselBasicComponent } from './components/ngb-carousel-basic/ngb-carousel-basic.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdown-basic.component';
+import { AddComponent } from './components/add/add.component';
 
 @NgModule({
   declarations: [
@@ -46,11 +47,12 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
-    NgbCarouselBasicComponent,
     NavbarComponent,
-    NgbdDropdownBasic
+    NgbdDropdownBasic,
+    AddComponent
   ],
   imports: [
+    [NgbModule],
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -93,7 +95,15 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
          path: 'register',
        component: RegisterComponent
       },
-      {path:'profile',component:AccountComponent}
+      {path:'profile',component:AccountComponent},
+      {
+        path: 'add',
+      component: AddComponent
+     },
+     {
+      path: 'search',
+    component: SearchComponent
+   },
   ]),
     BrowserAnimationsModule,
   ],
