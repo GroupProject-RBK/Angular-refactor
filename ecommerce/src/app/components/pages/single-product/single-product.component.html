@@ -36,7 +36,7 @@
         <br />
         <button class="btn btn-primary btn-sm" [routerLink]="['']">BACK</button> &nbsp; 
         <button class="btn btn-primary btn-sm" [routerLink]="['/products']">NAVIGATE TO PRODUCTS</button> &nbsp;
-        <button class="btn btn-primary btn-sm" [routerLink]="['/login']"> BUY </button> &nbsp; 
+        <button class="btn btn-primary btn-sm" (click)="buy(product)"> BUY </button> &nbsp; 
         
          <!-- to="/products" class="btn btn-primary btn-sm">PRODUCTS -->
       </div> 

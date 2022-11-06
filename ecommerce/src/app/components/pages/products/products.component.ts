@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class ProductsComponent implements OnInit {
   products : any
   array : any
+  
   constructor(private service : DataService, private route : Router) { }
   getAllProduct(){
     this.service.getAllProduct().subscribe((res : any) =>{
