@@ -34,9 +34,9 @@
         <br />
         <br />
         <br />
-        <button class="btn btn-primary btn-sm" (click)="back()" >BACK</button> &nbsp; 
-        <button class="btn btn-primary btn-sm" (click)="prod()">NAVIGATE TO PRODUCTS</button> &nbsp;
-        <button class="btn btn-primary btn-sm" (click)="buy()" > BUY </button> &nbsp; 
+        <button class="btn btn-primary btn-sm" [routerLink]="['']">BACK</button> &nbsp; 
+        <button class="btn btn-primary btn-sm" [routerLink]="['/products']">NAVIGATE TO PRODUCTS</button> &nbsp;
+        <button class="btn btn-primary btn-sm" (click)="buy(product)"> BUY </button> &nbsp; 
         
          <!-- to="/products" class="btn btn-primary btn-sm">PRODUCTS -->
       </div> 

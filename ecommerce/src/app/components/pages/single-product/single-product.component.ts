@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/_services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { SingleProductService } from '../../services/single-product.service';
-
+import { DataService } from '../../../../_services/data.service';
 @Component({
   selector: 'app-single-product',
   templateUrl: './single-product.component.html',
@@ -14,7 +12,7 @@ export class SingleProductComponent implements OnInit {
   newdata: any;
   id : any
   product:any
-    constructor(private DataService:DataService , private Activ : ActivatedRoute,private route : Router) {
+    constructor(private  DataService: DataService , private Activ : ActivatedRoute, private route : Router) {
       this.id = this.Activ.snapshot.paramMap.get('id')
      }
     ngOnInit(): void {    
@@ -29,21 +27,15 @@ export class SingleProductComponent implements OnInit {
     check(){
       document.cookie.length > 0 ? this.route.navigate(["cart"]) : this.route.navigate(["login"])  
     }
-
-  back(){
-    this.route.navigate(["home"])
-  }
-
-prod(){
-  this.route.navigate(["products"])
-}
-buy(){
-  if(!document.cookie){this.route.navigate(['/login'])}
-  else{
-    this.DataService.addToCart(this.newdata)
-  }
-}
-
+    back(){
+      this.route.navigate(["home"])
+    }
+    buy(product:any){
+   this.DataService.addToCart(product)
+    }
+    prod(){
+      this.route.navigate(["products"])
+    }
 
 
 }

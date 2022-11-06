@@ -26,9 +26,12 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { MybuysComponent } from './components/pages/mybuys/mybuys.component';
+import { MyProductsComponent } from './components/pages/my-products/my-products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdown-basic.component';
 import { AddComponent } from './components/add/add.component';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +52,12 @@ import { AddComponent } from './components/add/add.component';
     SearchFilterPipe,
     NavbarComponent,
     NgbdDropdownBasic,
-    AddComponent
+    AddComponent,
+    MybuysComponent,
+    MyProductsComponent,
+    NavbarComponent,
+    NgbdDropdownBasic
+
   ],
   imports: [
     [NgbModule],
@@ -104,6 +112,8 @@ import { AddComponent } from './components/add/add.component';
       path: 'search',
     component: SearchComponent
    },
+      {path:'Myproduct',component:MyProductsComponent},
+      {path:'MyBuys',component:MybuysComponent}
   ]),
     BrowserAnimationsModule,
   ],

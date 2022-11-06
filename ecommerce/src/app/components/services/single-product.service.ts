@@ -60,7 +60,11 @@ return this.http.post('http://localhost:3002/products/login',user,{withCredentia
   }
   //logout user
   logout(){
-    return this.http.get('http://localhost:3002/products/logout')
+      var allCookies = document.cookie.split(';');
+      for (var i = 0; i < allCookies.length; i++)
+      console.log(i,allCookies[i])
+          document.cookie = allCookies[i] + "=;expires="
+          + new Date(0).toUTCString();
   }
   //get oen use info
 getOne(token:any){

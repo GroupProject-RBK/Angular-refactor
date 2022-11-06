@@ -4,6 +4,7 @@ import { SingleProductComponent } from './components/pages/single-product/single
 
 const routes: Routes = [{path : "singleproduct/:id",component:SingleProductComponent},];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

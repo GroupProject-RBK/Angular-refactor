@@ -16,7 +16,7 @@ module.exports={
     },
     getallP:(cb,values)=>{
         var sql='select * from products where user_id=?'
-        db.query(sql,[values.user_id],(err,result)=>{cb(err,result)})
+        db.query(sql,[values.id],(err,result)=>{cb(err,result)})
     },
     updateUser:async(req,res)=>{
         console.log(req.body)
