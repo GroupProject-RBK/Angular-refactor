@@ -76,6 +76,7 @@ import { AddComponent } from './components/add/add.component';
         path: 'home',
         component: HomeComponent,
       },
+    
       {
         path: 'products/:id',
         component: SingleProductComponent,

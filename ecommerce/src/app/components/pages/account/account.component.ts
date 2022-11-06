@@ -28,6 +28,7 @@ ngStyle: string = '';
   log=()=>{
     console.log(this.userInfo)
   }
+  
   updateU=()=>{
     var t=this.userInfo
 

@@ -30,9 +30,9 @@ export class SingleProductComponent implements OnInit {
     back(){
       this.route.navigate(["home"])
     }
-    buy(){
-   this.DataService.addToCart(this.newdata)
-    }
+    buy(){document.cookie.length > 0 ? this.DataService.addToCart(this.newdata) : this.route.navigate(["login"])}
+   
+    
     prod(){
       this.route.navigate(["products"])
     }

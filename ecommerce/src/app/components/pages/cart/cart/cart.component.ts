@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../../_services/data.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,7 +11,7 @@ export class CartComponent implements OnInit {
   total:any
   userInfo:any
   user:any
-  constructor(private dataservices:DataService) { }
+  constructor(private dataservices:DataService, private route : Router) { }
 
   ngOnInit(): void {
     this.data=this.dataservices.getcart()
@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
       this.dataservices.buyP(this.data[i].id,this.userInfo).subscribe((result)=>{console.log(result)},(error)=>{console.log(error)})
     }
     this.dataservices.clearCart()
+    this.route.navigate(["home"])
   }
 
   check(){
