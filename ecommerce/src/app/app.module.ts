@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
@@ -28,11 +27,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { MybuysComponent } from './components/pages/mybuys/mybuys.component';
 import { MyProductsComponent } from './components/pages/my-products/my-products.component';
+import { NgbCarouselBasicComponent } from './components/ngb-carousel-basic/ngb-carousel-basic.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdown-basic.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     FooterComponent,
     HomeComponent,
     AboutComponent,
@@ -47,11 +49,17 @@ import { MyProductsComponent } from './components/pages/my-products/my-products.
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
+
     MybuysComponent,
     MyProductsComponent,
 
   
     
+
+    NgbCarouselBasicComponent,
+    NavbarComponent,
+    NgbdDropdownBasic
+
   ],
   imports: [
     BrowserModule,
@@ -66,11 +74,11 @@ import { MyProductsComponent } from './components/pages/my-products/my-products.
      MatListModule,
     RouterModule.forRoot([
       {
-        path: '',
+        path: 'home',
         component: HomeComponent,
       },
       {
-        path: 'products/:productId',
+        path: 'products/:id',
         component: SingleProductComponent,
       },
       {

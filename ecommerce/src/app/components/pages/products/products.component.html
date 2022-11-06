@@ -1,1 +1,44 @@
-<p>products works!</p>
+<main>
+  <div class='pg-header'>
+    <div class='container'>
+      <div class='row align-item-center'></div>
+      <nav>
+        <ol class='breadcrumb justify-content-end'>
+          <li class='breadcrumb-item'>
+            Home
+          </li>
+          <li class='breadcrumb-item active'>Products</li>
+        </ol>
+      </nav>
+        <h1>Products</h1>
+    </div>
+    <div class='col-lg-5'>
+    </div>
+  </div>
+  <div class='container content'>
+    <div class='row products-row'>
+          <div class='col-lg-4' *ngFor="let product of array; index as i">
+            <div class='card'>
+              <div class='img-warp'>
+                <img src={{product.img}} alt="image ici" class="img-thumbnail"/>
+              </div>
+              <div class='card-body'>
+                <h5 class='card-titel'>{{product.name}}</h5>
+                <p class='card-text'>{{product.description}}</p>
+                <div class='d-flex justify-content-between align-items-center'>
+                  <span>Price:<strong class='price'>{{product.price}}</strong></span>
+                  <button class='btn btn-primary btn-sm' (click)="goToSingleProductById(product.id,i)">DETAILS &#8594;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</main>
+
+
+
+
+
+
+
