@@ -30,8 +30,8 @@ export class SingleProductComponent implements OnInit {
     back(){
       this.route.navigate(["home"])
     }
-    buy(product:any){
-   this.DataService.addToCart(product)
+    buy(){
+   this.DataService.addToCart(this.newdata)
     }
     prod(){
       this.route.navigate(["products"])
