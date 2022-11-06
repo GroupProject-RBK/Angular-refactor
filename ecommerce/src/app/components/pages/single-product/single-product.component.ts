@@ -18,9 +18,8 @@ newdata: any;
   ngOnInit(): void {
 this.SingleProductService.getData().subscribe((res)=>{
   console.log(res)
-  this.newdata = res
- 
-  
+   this.newdata = res
+   
 })
   }
 

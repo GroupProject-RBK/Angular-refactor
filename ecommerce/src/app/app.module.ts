@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
@@ -22,11 +21,13 @@ import { SearchComponent } from './components/pages/search/search/search.compone
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { NgbCarouselBasicComponent } from './components/ngb-carousel-basic/ngb-carousel-basic.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdown-basic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     FooterComponent,
     HomeComponent,
     AboutComponent,
@@ -41,6 +42,9 @@ import { SearchFilterPipe } from './search-filter.pipe';
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
+    NgbCarouselBasicComponent,
+    NavbarComponent,
+    NgbdDropdownBasic
   ],
   imports: [
     BrowserModule,
@@ -51,8 +55,8 @@ import { SearchFilterPipe } from './search-filter.pipe';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: '',
-        component: HomeComponent,
+        path: 'home',
+        component: NgbCarouselBasicComponent,
       },
       {
         path: 'products/:productId',

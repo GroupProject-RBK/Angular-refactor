@@ -7,16 +7,14 @@ import { Router } from '@angular/router';
 export class SearchService {
 productsUrl =  'http://localhost:3002/products/getAll'
 
-  constructor(private http : HttpClient,
-    private router: Router ) { }
-  httpOptions = {
-    headers : new HttpHeaders({
-      "Access-Control-Allow-origin":"*",
-      "Cross-origin": "cross-site"    })
-  }
+  constructor(private http : HttpClient,private router : Router) { }
+
   getAll() {
     return this.http.get<any>(this.productsUrl)
   }
   
+  goplace(path:string) : void{
+    this.router.navigate([path])
+  }
 
 }

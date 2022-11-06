@@ -8,7 +8,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 
 export class SingleProductService {
-productsUrl: string = 'http://localhost:3002/products/1'
+productsUrl: string = 'http://localhost:3002/products/:id'
   constructor(private http : HttpClient) { }
   httpOptions = {
     headers : new HttpHeaders({
