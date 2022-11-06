@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,6 +21,11 @@ import { SearchComponent } from './components/pages/search/search/search.compone
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { RouterModule } from '@angular/router';
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,9 @@ import { SearchFilterPipe } from './search-filter.pipe';
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
+
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,10 @@ import { SearchFilterPipe } from './search-filter.pipe';
     Ng2SearchPipeModule,
     BrowserModule,
     FormsModule,
+    MatButtonModule,
+     MatIconModule,
+     MatSidenavModule,
+     MatListModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -81,6 +92,7 @@ import { SearchFilterPipe } from './search-filter.pipe';
          path: 'register',
        component: RegisterComponent
       },
+      {path:'profile',component:AccountComponent}
   ]),
     BrowserAnimationsModule,
   ],
