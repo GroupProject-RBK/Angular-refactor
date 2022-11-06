@@ -15,6 +15,7 @@ export class DataService {
       'Cross-origin': 'cross-site'
     })
   }
+ 
   // products services 
 //get all products data 
   getAllProduct(){
@@ -68,8 +69,16 @@ return this.http.post('http://localhost:3002/products/login',user,{withCredentia
   logout(){
     return this.http.get('http://localhost:3002/products/logout')
   }
+  //update user Info
+  updateU(info:any){
+    return this.http.put('http://localhost:3002/products/Uuser',info)
+  }
   //get oen use info
-getOne(token:any){
-  return this.http.post('http://localhost:3002/products/get-user',token)
+getOne(){
+  var x:any=document.cookie
+  x=x.split('=')
+  x.shift()
+  const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + x })
+  return this.http.post('http://localhost:3002/products/get-user',null,{headers})
 }
 }
