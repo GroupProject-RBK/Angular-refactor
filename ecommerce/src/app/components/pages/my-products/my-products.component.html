@@ -1,0 +1,62 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true"
+   >
+      <div class="logomain" routerLink="/login" routerLinkActive="active">
+        <a href="/home">
+        <mat-icon mat-list-icon >home</mat-icon>
+      </a>
+      </div>
+      <mat-nav-list>
+        <mat-list-item routerLink="/profile" routerLinkActive="active" >
+          <mat-icon mat-list-icon>settings</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">Account settings
+            </h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/Myproduct" routerLinkActive="active">
+          <mat-icon mat-list-icon>store</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">My Products</h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/MyBuys" routerLinkActive="active">
+          <mat-icon mat-list-icon>shopping_cart</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">My buys</h5>
+          </div>
+        </mat-list-item>
+
+  
+  
+      </mat-nav-list>
+     
+    </mat-sidenav>
+  
+    <div class='container content'>
+        <div class='row products-row'>
+              <div class='col-lg-4' *ngFor="let product of data">
+                <div class='card'>
+                  <div class='img-warp'>
+                    <img src={{product.img}} alt="image ici" class="img-thumbnail"/>
+                  </div>
+                  <div class='card-body'>
+                    <h5 class='card-titel'>{{product.name}}</h5>
+                    <p class='card-text'>{{product.description}}</p>
+                    <div class='d-flex justify-content-between align-items-center'>
+                      <span>Price:<strong class='price'>{{product.price}}</strong></span>
+                    </div>
+                    <button>Modifie</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+     
+  
+  </mat-sidenav-container>

@@ -26,6 +26,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { MybuysComponent } from './components/pages/mybuys/mybuys.component';
+import { MyProductsComponent } from './components/pages/my-products/my-products.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import {MatListModule} from '@angular/material/list';
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
+    MybuysComponent,
+    MyProductsComponent,
 
   
     
@@ -92,7 +96,9 @@ import {MatListModule} from '@angular/material/list';
          path: 'register',
        component: RegisterComponent
       },
-      {path:'profile',component:AccountComponent}
+      {path:'profile',component:AccountComponent},
+      {path:'Myproduct',component:MyProductsComponent},
+      {path:'MyBuys',component:MybuysComponent}
   ]),
     BrowserAnimationsModule,
   ],
