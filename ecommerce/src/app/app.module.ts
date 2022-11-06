@@ -46,9 +46,6 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
-
-  
-    
     NgbCarouselBasicComponent,
     NavbarComponent,
     NgbdDropdownBasic
@@ -67,10 +64,10 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
     RouterModule.forRoot([
       {
         path: 'home',
-        component: NgbCarouselBasicComponent,
+        component: HomeComponent,
       },
       {
-        path: 'products/:productId',
+        path: 'products/:id',
         component: SingleProductComponent,
       },
       {
