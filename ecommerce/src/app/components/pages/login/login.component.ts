@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(private dataservices:DataService ,private http:HttpClient,private route:Router,private tokenservices:AuthcheckService ) {}
 
   ngOnInit(): void {
+    if (document.cookie){this.route.navigate(['home'])}
   }
 
   //login function handling error
@@ -36,12 +37,14 @@ login(userlogin:any){
       };
       this.dataservices.login(email).subscribe((result)=>{this.userInfo=result})
       this.tokenObj=result;this.token=this.tokenObj.token
-     this.tokenservices.gettingToken(this.token)
+    this.tokenservices.gettingToken(this.token)
       console.log(userlogin.value)
-      this.route.navigate(['/home'])
+      
 
     },
     (error)=>{this.messageobj=error.error.msg;this.message=this.messageobj})
 }
-
+check(){
+  if (document.cookie){this.route.navigate(['home'])}
+}
 }
