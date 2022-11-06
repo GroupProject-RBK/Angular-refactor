@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,6 +20,11 @@ import { SearchComponent } from './components/pages/search/search/search.compone
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { RouterModule } from '@angular/router';
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 import { NgbCarouselBasicComponent } from './components/ngb-carousel-basic/ngb-carousel-basic.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdown-basic.component';
@@ -42,6 +46,9 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
+
+  
+    
     NgbCarouselBasicComponent,
     NavbarComponent,
     NgbdDropdownBasic
@@ -53,6 +60,10 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
     Ng2SearchPipeModule,
     BrowserModule,
     FormsModule,
+    MatButtonModule,
+     MatIconModule,
+     MatSidenavModule,
+     MatListModule,
     RouterModule.forRoot([
       {
         path: 'home',
@@ -85,6 +96,7 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
          path: 'register',
        component: RegisterComponent
       },
+      {path:'profile',component:AccountComponent}
   ]),
     BrowserAnimationsModule,
   ],

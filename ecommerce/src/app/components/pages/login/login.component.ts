@@ -34,7 +34,7 @@ login(userlogin:any){
       var email={
         email:userlogin.value.email
       };
-      this.dataservices.getOne(email).subscribe((result)=>{this.userInfo=result})
+      this.dataservices.login(email).subscribe((result)=>{this.userInfo=result})
       this.tokenObj=result;this.token=this.tokenObj.token
      this.tokenservices.gettingToken(this.token)
       console.log(userlogin.value)
