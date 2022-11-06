@@ -25,9 +25,12 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { MybuysComponent } from './components/pages/mybuys/mybuys.component';
+import { MyProductsComponent } from './components/pages/my-products/my-products.component';
 import { NgbCarouselBasicComponent } from './components/ngb-carousel-basic/ngb-carousel-basic.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdown-basic.component';
+
 
 @NgModule({
   declarations: [
@@ -46,9 +49,17 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
     CartComponent,
     SearchComponent,
     SearchFilterPipe,
+
+    MybuysComponent,
+    MyProductsComponent,
+
+  
+    
+
     NgbCarouselBasicComponent,
     NavbarComponent,
     NgbdDropdownBasic
+
   ],
   imports: [
     BrowserModule,
@@ -93,7 +104,9 @@ import { NgbdDropdownBasic } from './components/ngbd-dropdown-basic/ngbd-dropdow
          path: 'register',
        component: RegisterComponent
       },
-      {path:'profile',component:AccountComponent}
+      {path:'profile',component:AccountComponent},
+      {path:'Myproduct',component:MyProductsComponent},
+      {path:'MyBuys',component:MybuysComponent}
   ]),
     BrowserAnimationsModule,
   ],
